@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Todo.css";
 
 const Todo = () => {
   const [todos, setTodos] = useState([]);
@@ -8,7 +9,7 @@ const Todo = () => {
     setTodos((todos) => {
       return todos.concat({
         text: input,
-        id: Math.floor(matchMedia.random() * 10),
+        id: Math.floor(Math.random() * 10),
       });
     });
     setInput("");
@@ -27,19 +28,21 @@ const Todo = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
+
         <button onClick={handleSubmit}>Submit</button>
         <ul className="todo-list">
           {todos.map(({ text, id }) => (
-            <li className="todo-list" key={id}>
+            <li className="todo" key={id}>
               <span>{text}</span>
               <button className="close" onClick={() => removeTodo(id)}>
                 X
               </button>
             </li>
           ))}
-          ;
         </ul>
       </div>
     </>
   );
 };
+
+export default Todo;
