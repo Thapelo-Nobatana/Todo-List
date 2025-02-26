@@ -5,7 +5,8 @@
   }
   
   body {
-    background: #292929;
+    /* background: #292929; */
+    background-color: #fcfff3;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -13,7 +14,8 @@
   }
   
   .container {
-    background: #fcfff3;
+    /* background: #fcfff3; */
+    background: #454545;
     padding: 50px;
   }
   
